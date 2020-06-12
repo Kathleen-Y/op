@@ -1,0 +1,23 @@
+.header {
+    background-color: palevioletred;
+}
+
+.manager {
+    background-color: burlywood;
+}
+
+.engineer {
+    background-color: lightskyblue;
+}
+
+.intern {
+ background-color: lightseagreen;
+}
+
+.employee {
+    background-color: lightslategray;
+   }
+
+container, container-fluid {
+    background-color: lightgrey;
+}
