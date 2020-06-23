@@ -2,17 +2,13 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
-const path = require("path");
 const fs = require("fs");
-
-/* returns the path of the folder where the current .JS file resides. 
-__dirname used to get the directory name */
+const path = require("path");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
 const render = require("./lib/htmlRenderer");
 
-//General questions for recording new Employees
+//General questions
 const questions = [
     {
         type: "input",
@@ -72,7 +68,6 @@ async function ask() {
         const officeNbr = await inquirer.prompt(mgrQuestions);
         const officeNumber = officeNbr.office
         const employee = new Manager(name, id, email, officeNumber);
-        //Pushes new Employee with Manager role to array
         array.push(employee);
     
     } else if (role === "Engineer") {
