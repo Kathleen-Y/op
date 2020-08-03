@@ -1,7 +1,6 @@
 ## OP
 
-![GitHub](https://img.shields.io/static/v1?github/Kathleen-Y/op?logo=github)
-https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>
+  https://img.shields.io/github/status/s/pulls/Kathleen-Y/op/1?color=green&style=plastic
 # USER Story
 ```
 AS a manager
