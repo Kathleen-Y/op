@@ -1,7 +1,7 @@
 ## OP
 
-![GitHub repo size](https://img.shields.io/github/EMP/Kathleen-y/op?logo=github)
-
+![GitHub](https://img.shields.io/static/v1?github/Kathleen-Y/op?logo=github)
+https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>
 # USER Story
 ```
 AS a manager
