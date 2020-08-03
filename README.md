@@ -1,6 +1,6 @@
 ## OP
 
-https://img.shields.io/github/forks/Kathleen-Y/op
+![GitHub repo size](https://img.shields.io/github/forks/Kathleen-Y/op)
 
 # USER Story
 ```
