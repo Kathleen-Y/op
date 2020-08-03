@@ -1,6 +1,6 @@
 ## OP
 
-  https://img.shields.io/github/status/s/pulls/Kathleen-Y/op/1?color=green&style=plastic
+	https://img.shields.io/github/forks/Kathleen-Y/op
 # USER Story
 ```
 AS a manager
