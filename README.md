@@ -1,19 +1,45 @@
-## OOP
-One of the most important aspects of programming is writing code that is readable, reliable, and maintainable. Oftentimes, how we design our code is just as important as the code itself. In this homework assignment, your challenge is to build a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person. Since testing is a key piece in making code maintainable, you will also be ensuring that all unit tests pass.
+## OP
+
+![GitHub repo size](https://img.shields.io/github/EMP/Kathleen-y/op?logo=github)
+
+# USER Story
+```
+AS a manager
+I want to GENERATE a webpage that displays my team's basic info
+so that I have quick access to emails and GitHub profiles
+PROMPT the user for their email, id, and specific information based 
+on their role with the company. 
+```
+
+# Technologies Used
+
+1. Node.js
+2. MySQL
+2. NPM
+3. ES6
+
+# Table of Contents
+
+* [Installation](#installation)
+* [Instructions](#instructions)
+* [Features](#features)
+
+## Installation
+> 1.npm init // 2.npm install mysql inquirer // 3.npm install console.table --save
 
 ## Instructions
-You will build a software engineering team generator command line application. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. This assignment must also pass all unit tests. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user. Following the common templates for user stories, we can frame this challenge as follows:
+> Open your terminal and go inside the repo where the tracker.js is located. In your terminal type node tracker.js (nodemon tracker.js won't work properly with inquirer list choices). Follow the prompts to interact with the information of your company as desired.
 
-```
-As a manager
-I want to generate a webpage that displays my team's basic info
-so that I have quick access to emails and GitHub profiles
-How do you deliver this? Here are some guidelines:
-```
-
-Use the Inquirer npm package to prompt the user
-- for their email, id, and specific information based 
-on their role with the company. For instance, an intern may provide their school,
-whereas an engineer may provide their GitHub username.
-
-Your app will run as a Node CLI to gather information about each employee.
+## Features
+* View company employees
+* View employees by department
+* View company departments
+* View company job positions
+* Add employee
+* Add new job position to the company
+* Add new department to the company
+* Remove employees
+* Update employee's role
+* View all employees by manager
+* Update employee manager
+* View budget spent on a specific department
