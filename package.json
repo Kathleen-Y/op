@@ -1,14 +1,10 @@
 {
   "name": "op",
   "version": "1.0.0",
-  "description": "OOP and testing for week 10 homework",
+  "description": "Developers are often tasked with creating interfaces that make it easy for non-developers to view and interact with information stored in databases. Often these interfaces are known as **C**ontent **M**anagement **S**ystems. Need to build a solution for managing a company's employees using node, inquirer, and MySQL.",
   "main": "app.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
   "scripts": {
-    "test": "jest --verbose test/*"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,10 +17,15 @@
   },
   "homepage": "https://github.com/Kathleen-Y/op#readme",
   "dependencies": {
+<<<<<<< HEAD
     "init": "^0.1.2",
     "inquirer": "^6.5.2"
   },
   "devDependencies": {
     "jest": "^24.9.0"
+=======
+    "inquirer": "^7.2.0",
+    "mysql": "^2.18.1"
+>>>>>>> 6adfc120f06a6b54d6a621daf7a688ee7d955c60
   }
 }
