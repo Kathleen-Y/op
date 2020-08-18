@@ -4,110 +4,93 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-
-/* returns the path of the folder where the current .JS file resides. 
-__dirname used to get the directory name */
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+const RESULT_DIR = path.resolve(__dirname, "result");
+const resultPath = path.join(RESULT_DIR, "result.html");
 
 const render = require("./lib/htmlRenderer");
-
-//General questions for recording new Employees
 const questions = [
     {
         type: "input",
-        message: "What is your name?",
+        message: "Please enter your name.",
         name: "name"
     },
     {
         type: "input",
-        message: "what is your id number?",
+        message: "Please enter your ID number.",
         name: "id"
     },
     {
         type: "input",
-        message: "Please enter email.",
+        message: "Please enter your email address.",
         name: "email"
     },
     {
         type: "list",
-        message: "What is your role?",
+        message: "Please select your role.",
         choices: ["Manager", "Engineer", "Intern"],
         name: "role"
     }
 ];
-//variable to hold Question asked if employee is a manager
-const mgrQuestions = {
+
+const managerQuestions = {
     type: "input",
-    message: "What is your manager’s office number?",
+    message: "Please enter manager office number.",
     name: "office"
 };
-//variable to hold Question asked if employee is an engineer
-const egrQuestions = {
+const engineerQuestions = {
     type: "input",
-    message: "What is your engineer’s github user name?",
+    message: "Please enter Github username.",
     name: "gitHub"
 };
-//variable to hold Question asked if employee is an intern
-const itnQuestions = {
+const internQuestions = {
     type: "input",
-    message: "What is your school name?",
-    name: "education"
+    message: "Please enter school affiliation.",
+    name: "school"
 };
-//variable that holds Question asked if more employees need to be added
-const reStart = {
+const restartPrompts = {
     type: "list",
     message: "Would you like to add another team member?",
-    choices: ["yes", "no"],
+    choices: ["NO", "YES"],
     name: "restart"
 };
-//Variable with array that holds all user responses
+ 
 let array = [];
-//asynchronus function to initiate user question propmts
 async function ask() {
+
     const userResponse = await inquirer.prompt(questions);
     const { name, id, email, role } = userResponse;
-    
+
     if (role === "Manager") {
-        const officeNbr = await inquirer.prompt(mgrQuestions);
-        const officeNumber = officeNbr.office
+        const officeInput = await inquirer.prompt(managerQuestions);
+        const officeNumber = officeInput.office
         const employee = new Manager(name, id, email, officeNumber);
-        //Pushes new Employee with Manager role to array
         array.push(employee);
-    
+     
     } else if (role === "Engineer") {
-       // github username question for engineer
-        const git = await inquirer.prompt(egrQuestions);
-        const github = git.gitHub
+        const gitInput = await inquirer.prompt(engineerQuestions);
+        const github = gitInput.gitHub
         const employee = new Engineer(name, id, email, github);
-        
         array.push(employee);
-    
+  
     } else if (role === "Intern") {
-       //school name question for intern
-        const schoolName = await inquirer.prompt(itnQuestions);
-        const school = schoolName.education
+        const schoolInput = await inquirer.prompt(internQuestions);
+        const school = schoolInput.school
         const employee = new Intern(name, id, email, school);
-        
         array.push(employee);
     };
-    //variable restarts questions if user needs to input more employees
-    const restartAns = await inquirer.prompt(reStart);
-    const { restart } = restartAns;
-    //conditional statement that executes restart of questions if yes
-    if (restart === "yes") {
-        ask();
 
+    const restartInput = await inquirer.prompt(restartPrompts);
+    const { restart } = restartInput;
+    if (restart === "YES") {
+        ask();
     } else {
-        //variable holds block of html generated 
         const renderInfo = render(array);
-        //Writes team.html file to the outputPath directory using rendered info
-        fs.writeFile(outputPath, renderInfo, function(err){
-            if(err) {
+
+        fs.writeFile(resultPath, renderInfo, function(err){
+            if(err) 
                 throw err;
-            }
         });
     }
 }
-// Calls the ask() function and initiates inquire.prompt 
+ 
 ask();
