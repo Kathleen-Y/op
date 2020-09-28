@@ -1,5 +1,5 @@
 ## OP
-![GitHub repo size](https://img.shields.io/github/repositor/Kathleen-Y/op)
+![GitHub repo size](https://img.shields.io/github/repo-size/Kathleen-Y/op?logo=github)
 ![GitHub repo size](https://img.shields.io/github/forks/Kathleen-Y/op)
 
 # USER Story
